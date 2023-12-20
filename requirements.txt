@@ -1,0 +1,7 @@
+aiogram
+pandas
+openpyxl
+pytz
+datetime
+apscheduler
+python-dotenv
