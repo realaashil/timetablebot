@@ -33,6 +33,6 @@ Down for now will be up next semster
 
 ## TODO
 
-- [ ] Reoragise files and functions
+- [x] Reoragise files and functions
 - [ ] Use database instead of hacky solution
 - [ ] Use docker for bot
