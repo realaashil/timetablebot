@@ -9,6 +9,7 @@ from aiogram.utils.markdown import hbold
 
 from bot.keyboard.inline import day_kb
 from bot.state.timetable import Timetable
+from bot.utils.database import db
 
 commands_router = Router()
 
@@ -17,6 +18,7 @@ commands_router = Router()
     Command(BotCommand(command="start", description="Start the bot"))
 )
 async def command_start_handler(message: types.Message) -> None:
+    db.add_user(message.from_user)
     await message.answer(
         f"Hello, {hbold(message.from_user.full_name)}!, Use /timetable command to get your today timetable"
     )

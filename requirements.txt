@@ -1,7 +1,8 @@
 aiogram
-pandas
-openpyxl
-pytz
-datetime
 apscheduler
+datetime
+openpyxl
+pandas
+peewee
 python-dotenv
+pytz
