@@ -2,16 +2,14 @@ import asyncio
 import logging
 import sys
 
-from aiogram import Bot, Dispatcher
-from aiogram.enums import ParseMode
+from aiogram import Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 
 from bot import main_router
-from config import TOKEN
+from config import bot
 
 dp = Dispatcher(storage=MemoryStorage())
 dp.include_router(main_router)
-bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
 
 
 async def main() -> None:
