@@ -2,6 +2,7 @@ import os
 import sys
 
 import dotenv
+import pandas as pd
 from aiogram import Bot
 from aiogram.enums import ParseMode
 
@@ -13,3 +14,5 @@ if not TOKEN:
 TIMETABLE_PATH = os.getenv("TIMETABLE_FILE")
 ADMIN = tuple(map(int, os.getenv("ADMIN").split(",")))
 bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
+MESS_FILE = os.getenv("MESS_FILE")
+mess = pd.read_excel(MESS_FILE)

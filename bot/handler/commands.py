@@ -33,3 +33,19 @@ async def timetable(message: types.Message, state: FSMContext) -> None:
     await message.answer(
         f"Choose Your Day, Today is {today}", reply_markup=day_kb.as_markup()
     )
+
+
+@commands_router.message(
+    Command(BotCommand(command="rm_me", description="remove from mess notification"))
+)
+async def remove_mess(message: types.Message):
+    db.remove_mess(message.from_user.id)
+    await message.reply("Removed from mess notification")
+
+
+@commands_router.message(
+    Command(BotCommand(command="add_me", description="add mess notification"))
+)
+async def add_mess(message: types.Message):
+    db.add_mess(message.from_user.id)
+    await message.reply("Added to mess notification")
