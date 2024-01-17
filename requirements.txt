@@ -6,3 +6,4 @@ pandas
 peewee
 python-dotenv
 pytz
+requests
