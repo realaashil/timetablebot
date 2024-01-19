@@ -8,7 +8,7 @@ class Users(Model):
     username = CharField(default=None, null=True)
     first_name = CharField(default=None, null=True)
     last_name = CharField(default=None, null=True)
-    mess_noti = BooleanField(default=True)
+    mess_noti = BooleanField(default=False)
 
     class Meta:
         database = db
