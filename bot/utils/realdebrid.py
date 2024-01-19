@@ -4,11 +4,11 @@ import re
 import requests
 from aiogram.types import Message
 
-from config import bot
+from config import RD_API_TOKEN, bot
 
 
 class RD:
-    def __init__(self, apitoken: str) -> None:
+    def __init__(self, apitoken: str | None) -> None:
         self.rd_apitoken = apitoken
         self.base_url = "https://api.real-debrid.com/rest/1.0"
         self.header = {"Authorization": "Bearer " + self.rd_apitoken}
@@ -61,7 +61,7 @@ class RD:
         )
 
 
-rd = RD("VWWEB5YIEXJYEFMDTLROBTAHZG75PQBLUMTFDZJM6PIATZWCUYSQ")
+rd = RD(RD_API_TOKEN)
 
 
 def extract_link(message_text):

@@ -8,11 +8,12 @@ from aiogram.enums import ParseMode
 
 dotenv.load_dotenv()
 
+ADMIN = tuple(map(int, os.getenv("ADMIN").split(",")))
+MESS_FILE = os.getenv("MESS_FILE")
+RD_API_TOKEN = os.getenv("RD_API_TOKEN")
+TIMETABLE_PATH = os.getenv("TIMETABLE_FILE")
 TOKEN = os.getenv("BOT_TOKEN")
+bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
 if not TOKEN:
     sys.exit("No token provided")
-TIMETABLE_PATH = os.getenv("TIMETABLE_FILE")
-ADMIN = tuple(map(int, os.getenv("ADMIN").split(",")))
-bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
-MESS_FILE = os.getenv("MESS_FILE")
 mess = pd.read_excel(MESS_FILE)
