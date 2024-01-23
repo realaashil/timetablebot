@@ -1,19 +1,12 @@
-[
-  {
-    "CST101": "C Theory",
-    "ECT101": "DD Theory",
-    "ECT103": "CT Theory",
-    "HST101": "English Theory",
-    "MAT101": "Maths Theory"
-  },
-  {
-    "ECT101": "DD Tutorial",
-    "ECT103": "CT Tutorial",
-    "MAT101": "Maths Tutorial",
-    "CSP101": "C Lab",
-    "CSP111": "Robo Lab",
-    "ECP101": "DD Lab",
-    "ECP111": "Matlab",
-    "HSP101": "English Lab"
-  }
-]
+{
+  "CSP102": "DSA Lab",
+  "CSP112": "IT Lab",
+  "CST102": "DSA Theory",
+  "ECP102": "E.D Lab",
+  "ECP112": "C.D and Printing Lab",
+  "ECT102": "Electrical Devices",
+  "ECT104": "Electrical Enginering",
+  "HSP102": "English lab",
+  "HST102": "English Theory",
+  "MAT102": "Maths Theory"
+}

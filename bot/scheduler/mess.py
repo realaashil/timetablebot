@@ -28,6 +28,7 @@ async def mess_bot(time: int):
     for j, item in enumerate(today_menu):
         message_menu += f"{j + 1} {item} \n"
     message_menu += f"{part[time]} Menu for {day_today} \n"
+    message_menu += "To get removed from notifcations use /rm_me \n"
     message_menu += "Created By @aashil"
     for k in user_ids:
         await bot.send_message(chat_id=k, text=message_menu)
