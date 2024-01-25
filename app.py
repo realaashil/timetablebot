@@ -10,7 +10,7 @@ from apscheduler.triggers.cron import CronTrigger
 
 from bot import main_router
 from bot.scheduler.mess import mess_bot
-from bot.utils.database import db
+from models.users import db,Users
 from config import bot
 
 dp = Dispatcher(storage=MemoryStorage())
@@ -19,11 +19,14 @@ dp.include_router(main_router)
 
 async def main() -> None:
     scheduler = AsyncIOScheduler()
+    db.connect()
+    db.create_tables([Users], safe = True)
+    db.close()
     tz = pytz.timezone("Asia/Kolkata")
-    trigger_breakfast = CronTrigger(hour=22, minute=39, timezone=tz)
-    trigger_lunch = CronTrigger(hour=0, minute=2, timezone=tz)
-    trigger_snacks = CronTrigger(hour=0, minute=2, timezone=tz)
-    trigger_dinner = CronTrigger(hour=0, minute=2, timezone=tz)
+    trigger_breakfast = CronTrigger(hour=0, minute=2, timezone=tz)
+    trigger_lunch = CronTrigger(hour=0, minute=3, timezone=tz)
+    trigger_snacks = CronTrigger(hour=0, minute=4, timezone=tz)
+    trigger_dinner = CronTrigger(hour=0, minute=5, timezone=tz)
     scheduler.add_job(mess_bot, trigger=trigger_breakfast, args=[0])
     scheduler.add_job(mess_bot, trigger=trigger_lunch, args=[1])
     scheduler.add_job(mess_bot, trigger=trigger_snacks, args=[2])

@@ -24,7 +24,7 @@ def get_todays_classes(batch, today=None):
     else:
         todays_classes = pd.DataFrame()
     todays_classes = todays_classes.apply(
-        lambda x: x.map(lambda y: y if batch in str(y) or "LT" in str(y) else None)
+        lambda x: x.map(lambda y: y if batch in str(y) or "LT" in str(y) or "OTT102" in str(y) else None)
     )
     return todays_classes
 

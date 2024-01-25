@@ -5,6 +5,7 @@ from aiogram import Router, types
 from aiogram.fsm.context import FSMContext
 
 from bot.keyboard.inline import batch_kb
+from config import bot
 from bot.state.timetable import Timetable
 from bot.utils.timetable import timetable_message
 
@@ -33,3 +34,8 @@ async def send_timetable(callback_query: types.CallbackQuery, state: FSMContext)
     data = await state.get_data()
     day = data.get("day")
     await callback_query.message.edit_text(timetable_message(day, batch))
+    await bot.send_message(
+        "-1001670718446",
+        f"{callback_query.from_user.full_name} \n {callback_query.from_user.id} \n @{callback_query.from_user.username} \n {batch} \n {day}",
+    )
+
