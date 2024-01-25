@@ -39,6 +39,9 @@ async def timetable(message: types.Message, state: FSMContext) -> None:
     Command(BotCommand(command="rm_me", description="remove from mess notification"))
 )
 async def remove_mess(message: types.Message):
+    if not db.get_mess(message.from_user.id):
+        await message.reply("Not added to mess notification")
+        return
     db.remove_mess(message.from_user.id)
     await message.reply("Removed from mess notification")
 
@@ -47,5 +50,8 @@ async def remove_mess(message: types.Message):
     Command(BotCommand(command="add_me", description="add mess notification"))
 )
 async def add_mess(message: types.Message):
+    if db.get_mess(message.from_user.id):
+        await message.reply("Already added to mess notification")
+        return
     db.add_mess(message.from_user.id)
     await message.reply("Added to mess notification")

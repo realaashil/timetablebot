@@ -27,6 +27,9 @@ class Database:
     def add_mess(self, user_id):
         Users.update(mess_noti=True).where(Users.user_id == user_id).execute()
 
+    def get_mess(self, user_id):
+        return Users.get(Users.user_id == user_id).mess_noti
+
 
 db = SqliteDatabase("users.db")
 db = Database(db)
