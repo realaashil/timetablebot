@@ -15,7 +15,7 @@ class Database:
             username=user.username,
             first_name=user.first_name,
             last_name=user.last_name,
-            mess_noti=True,
+            mess_noti=False,
         )
 
     def list_all_user_id_mess(self):
