@@ -31,7 +31,10 @@ async def mess_bot(time: int):
     message_menu += "To get removed from notifcations use /rm_me \n"
     message_menu += "Created By @aashil"
     for k in user_ids:
-        await bot.send_message(chat_id=k, text=message_menu)
+        try:
+            await bot.send_message(chat_id=k, text=message_menu)
+        except Exception:
+            pass
 
 
 def get_menu(day_menu, j):
