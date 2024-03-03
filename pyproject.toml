@@ -16,6 +16,7 @@ peewee = "^3.17.0"
 python-dotenv = "^1.0.0"
 pytz = "^2023.3.post1"
 requests = "^2.31.0"
+paramiko = "^3.4.0"
 
 
 [build-system]

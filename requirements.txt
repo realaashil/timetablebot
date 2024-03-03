@@ -3,6 +3,7 @@ apscheduler
 datetime
 openpyxl
 pandas
+paramiko
 peewee
 python-dotenv
 pytz
